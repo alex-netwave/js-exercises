@@ -1,8 +1,33 @@
 html {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 0px 500px;
 }
 
 body {
-    display: flex;
+    flex: 1;
 
+    background-color: white;
+    padding: 50px 150px;
+    margin: 0px;
+    height: 800px;
+
+}
+
+.info-container {
+    flex: 1;
+}
+
+label {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#technology {
+    display: inline-block;
+}
+
+#greeting {
+    margin-top: 30px;
 }
