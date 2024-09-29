@@ -102,4 +102,7 @@ function setTechnology() {
         h2.textContent = 'Info:';
     else
         h2.textContent = '';
+
+    //Putting all the info above in a class would provide a good way to access the 
+    //data for organizing it on a webpage
 }
