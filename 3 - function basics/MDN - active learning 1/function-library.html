@@ -50,6 +50,11 @@
         para.textContent = `${num} squared is ${squared(num)}, `;
         para.textContent += `cubed is ${cubed(num)}, `
         para.textContent += `factorial is ${factorial(num)}`
+
+        para.textContent += `Using Arrow Functions:`;
+        para.textContent += `squared: ${(n=>n*n)(num)},`;
+        para.textContent += `cubed: ${(n=>n*n*n)(num)},`;
+        para.textContent += `factorial: ${(n=> n <0 ? undefined : (n=> {let aux = 1; for (let val=n; val>0; val--){aux *= val}return aux;})(num))(num)}`;
       }
     });
 
