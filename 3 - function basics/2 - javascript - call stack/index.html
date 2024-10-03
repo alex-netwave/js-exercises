@@ -4,54 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-        html {
-            background-color: black;
-            display: flex;
-            justify-content: center;
-        }
-        body {
-            background-color: white;
-            margin: 0px;
-            padding: 50px;
-            height: 800px;
-            display: flex;
-            flex-direction: column;
-        }
-        .top-row,
-        .bottom-row {
-            display: flex;
-            flex-direction: column;
-            height: 50%;
-            width: 100%;
-        }
-
-        .bottom-row {
-            justify-content: center;
-            align-items: end;
-            flex-direction: row;
-        }
-        .stack-container {
-            display: flex;
-
-            background-color: rgb(255, 165, 0, 0.5);
-            width: 200px;
-            height: 300px;
-        }
-
-        .prompt-container {
-            display: inline-flex;
-            align-items: center;
-        }
-
-        input {
-            width: 100px;
-            height: 20px;
-            margin: 0px 2px;
-        }
-
-    </style>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="top-row">
@@ -66,34 +20,10 @@
     </div>
 
     <div class="bottom-row">
-        <div class="stack-container"></div>
+        <div class="stack-container">
+            <div class="stack-title">Call Stack</div>
+            <ul></ul>
+        </div>
     </div>
-
-    <script>
-        const aInput = document.querySelector(".numberInputA");
-        const bInput = document.querySelector(".numberInputB");
-        const button = document.querySelector("button");
-        const para = document.querySelector(".output");
-        
-        function add(a,b) {
-            return a + b;
-        }
-
-        function average(a,b) {
-            return add(a,b)/2;
-        }
-
-        button.addEventListener('click', () => {
-            const numA = parseFloat(aInput.value);
-            const numB = parseFloat(bInput.value);
-            para.textContent = average(numA, numB);
-        })
-        
-        function push(funcName) {
-            
-        }
-
-
-    </script>
 </body>
 </html>
