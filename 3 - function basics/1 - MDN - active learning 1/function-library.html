@@ -54,6 +54,7 @@
         para.textContent += `Using Arrow Functions:`;
         para.textContent += `squared: ${(n=>n*n)(num)},`;
         para.textContent += `cubed: ${(n=>n*n*n)(num)},`;
+        // below using a combination of two arrow functions and the ternary operator
         para.textContent += `factorial: ${(n=> n <0 ? undefined : (n=> {let aux = 1; for (let val=n; val>0; val--){aux *= val}return aux;})(num))(num)}`;
       }
     });
