@@ -9,12 +9,14 @@ body {
     margin: 10px;
     padding: 70px;
     height: 750px;
+    width: 700px;
     display: flex;
     flex-direction: column;
     border-radius: 10%;
 }
 
 .top-row,
+.middle-row,
 .bottom-row {
     display: flex;
     flex-direction: column;
@@ -22,12 +24,9 @@ body {
 }
 
 .top-row {
-    height: 25%;
 }
 
 .bottom-row {
-    justify-content: center;
-    align-items: end;
     flex-direction: row;
 }
 .stack-container {
@@ -37,6 +36,7 @@ body {
     background-color: rgb(255, 165, 0, 0.5);
     width: 200px;
     height: 300px;
+    margin-left: 120px;
 }
 
 .stack-title {
@@ -63,12 +63,20 @@ li {
 }
 
 .prompt-container {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 100px;
 }
 
 input {
     width: 100px;
     height: 20px;
-    margin: 0px 2px;
+    margin: 2px 0px;
+}
+
+h1 {
+    margin: 0px;
 }

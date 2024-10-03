@@ -9,17 +9,34 @@
 </head>
 <body>
     <div class="top-row">
-        <h1>Visualizing the JavaScript Function Call Stack</h1>
+        <h1>The JavaScript Call Stack</h1>
+        <h2>What is it?</h2>
+        <p>The JavaScript engine uses a call stack to keep track of the scripts and functions that 
+        are executing.</p>
+        <p>
+        When a script is executed, the JavaScript enginge creates a global execution context and 
+        pushes it to the stack.
+        </p>
+        <p>
+        When a function is called, the JavaScript engine creates a function execution context
+        for that function and pushes it to the stack. <br>
+        If a function calls another function, the JavaScript engine creates a new function
+        execution context for the function being called and pushes it to the stack.
+        </p>
+    </div>
+
+    <div class="middle-row">
+    </div>
+
+    <h2>Visualizing the JavaScript Function Call Stack</h2>
+    <div class="bottom-row">
         <div class="prompt-container">
-            <p class="promt-text">Enter a number:</p>
+            <p class="promt-text">Enter two numbers:</p>
             <input class="numberInputA" type="text">
             <input class="numberInputB" type="text">
             <button>Solve</button>
+            <p class="output"></p>
         </div>
-        <p class="output"></p>
-    </div>
-
-    <div class="bottom-row">
         <div class="stack-container">
             <div class="stack-title">Call Stack</div>
             <ul></ul>
