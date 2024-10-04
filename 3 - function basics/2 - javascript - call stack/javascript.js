@@ -4,34 +4,38 @@ const button = document.querySelector("button");
 const para = document.querySelector(".output");
 const list = document.querySelector("ul");
 
+// delay time in ms
 let ms = 1000;
-const script_and_func_list = [divide.name, add.name, average.name, "javascript.js"]
-let stack = script_and_func_list;
+
+// list of execution contexts that will occur
+let xContextList = [divide.name, add.name, average.name, "javascript.js"]
+const xCLFullLength = xContextList.length;
 
 async function add(a,b) {
-    await push();
+    await pushCS();
     return a + b;
 }
 
 async function divide(a) {
-    await push()
+    await pushCS()
     return a/2;
 }
 
 async function average(a,b) {
-    await push();
+    await pushCS();
     const sum = await add(a,b);
     return divide(sum);
 }
 
 button.addEventListener('click', async () => {
-    await push();
-    const numA = parseFloat(aInput.value);
-    const numB = parseFloat(bInput.value);
-    const result = await average(numA, numB);
-    para.textContent = "Result: " + result;
-    popAll();
-    stack = script_and_func_list;
+    if (xContextList.length === xCLFullLength){
+        await pushCS();
+        const numA = parseFloat(aInput.value);
+        const numB = parseFloat(bInput.value);
+        const result = await average(numA, numB);
+        para.textContent = `Average: ${result}`;
+        popAll();
+    }
 });
 
 function delay() {
@@ -42,20 +46,23 @@ function delay() {
     });
 }
 
-async function push() {
+async function pushCS() {
     let entry = document.createElement('li');
-    entry.textContent = stack.pop();  
+    entry.textContent = xContextList.pop();  
     await delay();
     list.appendChild(entry);
 }
 
-async function pop() {
+async function popCS() {
     await delay();
-    list.removeChild(list.lastElementChild)   
+    return list.removeChild(list.lastElementChild).textContent;  
 }
 
 async function popAll() {
     while (list.hasChildNodes()) {
-        await pop();
+        const xContext = await popCS();
+
+        // add function name back to list of impending execution contexts
+        xContextList.push(xContext); 
     }
 }

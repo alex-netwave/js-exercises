@@ -30,11 +30,12 @@ body {
 .stack-container {
     display: flex;
     flex-direction: column;
+    justify-self: center;
     align-items: end;
     background-color: rgb(255, 165, 0, 0.5);
     width: 200px;
     height: 300px;
-    margin-left: 120px;
+    margin-left: 5%;
 }
 
 .stack-title {
@@ -63,6 +64,11 @@ li {
 .prompt-container {
     display: flex;
     flex-direction: column;
+    width: 30%;
+}
+
+.prompt-description {
+    margin: 0px;
 }
 
 button {
