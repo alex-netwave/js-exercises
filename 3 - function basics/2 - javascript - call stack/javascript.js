@@ -5,7 +5,8 @@ const para = document.querySelector(".output");
 const list = document.querySelector("ul");
 
 let ms = 1000;
-let stack = [divide.name, add.name, average.name, "javascript.js"]
+const script_and_func_list = [divide.name, add.name, average.name, "javascript.js"]
+let stack = script_and_func_list;
 
 async function add(a,b) {
     await push();
@@ -30,7 +31,7 @@ button.addEventListener('click', async () => {
     const result = await average(numA, numB);
     para.textContent = "Result: " + result;
     popAll();
-    stack = [divide.name, add.name, average.name, "javascript.js"]
+    stack = script_and_func_list;
 });
 
 function delay() {
