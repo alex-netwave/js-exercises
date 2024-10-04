@@ -1,5 +1,6 @@
-Goal: Understand the JavaScript engine's call stack and make an interactive tool for others to understand it.
-Notes:
+**Goal:** Understand the JavaScript engine's call stack and make an interactive tool for others to understand it.
+
+**Notes:**
 I wasn't familiar with using JavaScript to manipulate HMTL lists, these helped:
     - Adding list items:
         - https://stackoverflow.com/questions/17773938/add-a-list-item-through-javascript 
