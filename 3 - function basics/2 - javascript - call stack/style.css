@@ -23,8 +23,6 @@ body {
     width: 100%;
 }
 
-.top-row {
-}
 
 .bottom-row {
     flex-direction: row;
