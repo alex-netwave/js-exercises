@@ -4,7 +4,7 @@ const button = document.querySelector("button");
 const para = document.querySelector(".output");
 const list = document.querySelector("ul");
 
-let speed_ms = 1000;
+let ms = 1000;
 let stack = [add.name, average.name, "javascript.js"]
 
 async function add(a,b) {
@@ -32,7 +32,7 @@ function updateStack() {
     return new Promise((resolve) => {
         setTimeout(()=> {
             resolve('resolved');           
-        }, speed);
+        }, ms);
     });
 }
 
