@@ -5,17 +5,22 @@ const para = document.querySelector(".output");
 const list = document.querySelector("ul");
 
 let ms = 1000;
-let stack = [add.name, average.name, "javascript.js"]
+let stack = [divide.name, add.name, average.name, "javascript.js"]
 
 async function add(a,b) {
     await push();
     return a + b;
 }
 
+async function divide(a) {
+    await push()
+    return a/2;
+}
+
 async function average(a,b) {
     await push();
     const sum = await add(a,b);
-    return sum/2;
+    return divide(sum);
 }
 
 button.addEventListener('click', async () => {
@@ -24,11 +29,11 @@ button.addEventListener('click', async () => {
     const numB = parseFloat(bInput.value);
     const result = await average(numA, numB);
     para.textContent = "Result: " + result;
-    poper();
-    stack = [add.name, average.name, "javascript.js"]
+    popAll();
+    stack = [divide.name, add.name, average.name, "javascript.js"]
 });
 
-function updateStack() {
+function delay() {
     return new Promise((resolve) => {
         setTimeout(()=> {
             resolve('resolved');           
@@ -39,17 +44,16 @@ function updateStack() {
 async function push() {
     let entry = document.createElement('li');
     entry.textContent = stack.pop();  
-    const result = await updateStack();
+    await delay();
     list.appendChild(entry);
-    console.log(result);
 }
 
 async function pop() {
-    await updateStack();
+    await delay();
     list.removeChild(list.lastElementChild)   
 }
 
-async function poper() {
+async function popAll() {
     while (list.hasChildNodes()) {
         await pop();
     }
