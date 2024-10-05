@@ -1,0 +1,27 @@
+html {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    width: 700px;
+    height: 800px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+input,
+button,
+p {
+    height: 20px;
+    width: 100px;
+    margin: 0px;
+}
