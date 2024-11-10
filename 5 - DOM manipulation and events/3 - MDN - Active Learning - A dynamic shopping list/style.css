@@ -1,0 +1,30 @@
+html {
+  background-color: rgba(0, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: white;
+  margin: 10px;
+  padding: 70px;
+  height: 750px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10%;
+  border: solid;
+  box-shadow: 30px 30px;
+}
+
+li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+li button {
+  font-size: 12px;
+  margin-left: 20px;
+  color: #666;
+}
+
